@@ -1,17 +1,12 @@
+from src.ui.splash import SplashScreen
+from src.ui.main_window import MainWindow
 from PySide6.QtWidgets import QApplication
-from ui.main_window import MainWindow
-from ui.splash_screen import SplashScreen
 import sys
 import time
 
 def main():
     app = QApplication(sys.argv)
-app.setStyleSheet(open("src/ui/styles.qss").read())
-from src.ui.splash import SplashScreen
-from src.ui.main_window import MainWindow
-import time
 
-if __name__ == "__main__":
     # Splash screen
     splash = SplashScreen()
     splash.show()
@@ -25,8 +20,8 @@ if __name__ == "__main__":
 
     splash.finish(window)
 
-
     sys.exit(app.exec())
 
 if __name__ == "__main__":
     main()
+
