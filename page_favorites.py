@@ -6,6 +6,16 @@ class PageFavorites(QWidget):
         super().__init__()
 
         layout = QVBoxLayout(self)
-        label = QLabel("Vos favoris")
-        label.setAlignment(Qt.AlignCenter)
-        layout.addWidget(label)
+
+        title = QLabel("Vos offres favorites")
+        title.setAlignment(Qt.AlignCenter)
+        title.setStyleSheet("font-size: 22px; font-weight: bold;")
+
+        subtitle = QLabel("Les offres que vous avez enregistrées apparaîtront ici.")
+        subtitle.setAlignment(Qt.AlignCenter)
+        subtitle.setStyleSheet("font-size: 14px; color: #00ff99;")
+
+        layout.addStretch()
+        layout.addWidget(title)
+        layout.addWidget(subtitle)
+        layout.addStretch()
