@@ -6,8 +6,17 @@ class PageHome(QWidget):
         super().__init__()
 
         layout = QVBoxLayout(self)
-        label = QLabel("Bienvenue dans IT Job Finder 2026")
-        label.setAlignment(Qt.AlignCenter)
-        label.setStyleSheet("font-size: 24px;")
 
-        layout.addWidget(label)
+        title = QLabel("Bienvenue dans IT Job Finder 2026")
+        title.setAlignment(Qt.AlignCenter)
+        title.setStyleSheet("font-size: 26px; font-weight: bold;")
+
+        subtitle = QLabel("Votre assistant intelligent pour trouver un job IT")
+        subtitle.setAlignment(Qt.AlignCenter)
+        subtitle.setStyleSheet("font-size: 16px; color: #00ff99;")
+
+        layout.addStretch()
+        layout.addWidget(title)
+        layout.addWidget(subtitle)
+        layout.addStretch()
+
