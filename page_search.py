@@ -62,13 +62,21 @@ class PageSearch(QWidget):
         # ====== ACTION DU BOUTON ======
         self.btn_search.clicked.connect(self.fake_search)
 
-    def fake_search(self):
-        """Simulation de recherche (en attendant les API)."""
-        self.results_list.clear()
+   def fake_search(self):
+    self.results_list.clear()
 
-        job = self.input_job.text() or "Poste"
-        location = self.input_location.text() or "Lieu"
-        contract = self.combo_contract.currentText()
+    job = self.input_job.text() or "Poste"
+    location = self.input_location.text() or "Lieu"
+    contract = self.combo_contract.currentText()
+
+    logger.info("Recherche API lancée")
+
+    results = search_all(job, location, contract)
+
+    for offer in results:
+        self.results_list.addItem(
+            f"[{offer['source']}] {offer['title']} - {offer['location']} ({offer['contract']})"
+        )
 
         # Résultats simulés
         fake_results = [
@@ -78,3 +86,5 @@ class PageSearch(QWidget):
         ]
 
         self.results_list.addItems(fake_results)
+from api.search_engine import search_all
+from core.logger import logger
