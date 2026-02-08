@@ -25,6 +25,7 @@ class PageSearch(QWidget):
         self.input_job = QLineEdit()
         self.input_job.setPlaceholderText("Poste (ex: Administrateur Systèmes, DevOps...)")
         filters_layout.addWidget(self.input_job)
+from core.favorites import add_favorite
 
         # Localisation
         self.input_location = QLineEdit()
