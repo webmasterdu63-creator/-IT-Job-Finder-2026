@@ -1,9 +1,10 @@
 from PySide6.QtWidgets import (
-    QMainWindow, QWidget, QHBoxLayout, QStackedWidget
+    QMainWindow, QWidget, QHBoxLayout, QVBoxLayout, QStackedWidget
 )
 from PySide6.QtCore import Qt
 
 from .sidebar import SideBar
+from .header import Header
 from .pages.page_home import PageHome
 from .pages.page_search import PageSearch
 from .pages.page_favorites import PageFavorites
@@ -17,17 +18,27 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("IT Job Finder 2026")
         self.setMinimumSize(1100, 700)
 
-        # Widget principal
+        # ===== LAYOUT PRINCIPAL VERTICAL =====
         main_widget = QWidget()
-        main_layout = QHBoxLayout(main_widget)
+        main_layout = QVBoxLayout(main_widget)
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.setSpacing(0)
+
+        # ===== HEADER =====
+        self.header = Header()
+        main_layout.addWidget(self.header)
+
+        # ===== CONTENU (SIDEBAR + PAGES) =====
+        content_layout = QHBoxLayout()
+        main_layout.addLayout(content_layout)
 
         # Sidebar
         self.sidebar = SideBar()
-        main_layout.addWidget(self.sidebar)
+        content_layout.addWidget(self.sidebar)
 
-        # Zone centrale : QStackedWidget
+        # Zone centrale
         self.stack = QStackedWidget()
-        main_layout.addWidget(self.stack, stretch=1)
+        content_layout.addWidget(self.stack, stretch=1)
 
         # Pages
         self.page_home = PageHome()
@@ -35,31 +46,24 @@ class MainWindow(QMainWindow):
         self.page_favorites = PageFavorites()
         self.page_settings = PageSettings()
 
-        # Ajout des pages dans le stack
-        self.stack.addWidget(self.page_home)      # index 0
-        self.stack.addWidget(self.page_search)    # index 1
-        self.stack.addWidget(self.page_favorites) # index 2
-        self.stack.addWidget(self.page_settings)  # index 3
+        self.stack.addWidget(self.page_home)
+        self.stack.addWidget(self.page_search)
+        self.stack.addWidget(self.page_favorites)
+        self.stack.addWidget(self.page_settings)
 
         self.setCentralWidget(main_widget)
 
-        # Connexion des boutons
+        # Navigation
         self.sidebar.buttons[0].clicked.connect(lambda: self.switch_page(0))
         self.sidebar.buttons[1].clicked.connect(lambda: self.switch_page(1))
         self.sidebar.buttons[2].clicked.connect(lambda: self.switch_page(2))
         self.sidebar.buttons[3].clicked.connect(lambda: self.switch_page(3))
 
-        # Sélection par défaut
         self.sidebar.buttons[0].setChecked(True)
         self.stack.setCurrentIndex(0)
 
     def switch_page(self, index):
-        """Change la page affichée et met à jour le bouton actif."""
         self.stack.setCurrentIndex(index)
-
-        # Décocher tous les boutons
         for btn in self.sidebar.buttons:
             btn.setChecked(False)
-
-        # Cocher le bouton actif
         self.sidebar.buttons[index].setChecked(True)
