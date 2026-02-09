@@ -10,8 +10,6 @@
 
 Une application légère, multi‑OS, orientée AdminSys/DevOps, qui centralise les offres d’emploi IT depuis plusieurs plateformes.
 
-# IT Job Finder 2026
-
 IT Job Finder 2026 est une application multi‑plateforme permettant de rechercher,
 filtrer et exporter des offres d’emploi IT (AdminSys, DevOps, Cloud, Réseau).
 
