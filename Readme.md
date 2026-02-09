@@ -61,6 +61,7 @@ pip install -r requirements.txt
 # Lancer l'application
 python main.py
 
+
 🇬🇧 IT Job Finder 2026 — English Version
 
 IT Job Finder 2026
