@@ -22,3 +22,4 @@ filtrer et exporter des offres d’emploi IT (AdminSys, DevOps, Cloud, Réseau).
 Aider les techniciens, admins systèmes, DevOps juniors et confirmés à trouver rapidement des offres pertinentes, filtrées et classées intelligemment.
 IT-Job-Finder-2026/
 ## 🧱 Architecture technique
+<p align="center"> <img src="https://github.com/webmasterdu63-creator/project-2026/blob/main/architecture.png" alt="Architecture IT Job Finder 2026" width="700"> </p>
