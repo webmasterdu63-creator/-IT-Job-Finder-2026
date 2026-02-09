@@ -44,3 +44,40 @@ IT Job Finder 2026 is a multi‑platform application that allows you to search, 
 ✔ Compatible with Windows, Linux, macOS
 
 Helping technicians, system administrators, and DevOps (junior → senior) quickly find relevant job offers, intelligently filtered and organized.
+🚀 IT Job Finder 2026
+
+IT Job Finder 2026 est une application desktop légère et multi-OS conçue spécifiquement pour les professionnels de l'infrastructure (AdminSys, DevOps, Cloud, Réseau). Elle centralise et filtre les offres d'emploi provenant des plus grandes plateformes du secteur.
+✨ Fonctionnalités Clés
+
+    Multi-sources : Agrégation native d'offres depuis LinkedIn, Indeed, Welcome to the Jungle et France Travail (Pôle Emploi).
+
+    Filtres Intelligents : Recherche ciblée par mots-clés techniques (Docker, Kubernetes, Terraform, etc.).
+
+    Export Data : Possibilité d'exporter vos résultats de recherche au format Excel pour un suivi personnalisé.
+
+    Interface Moderne : Design typé "circuit-board" optimisé pour une expérience utilisateur fluide.
+
+    Compatibilité Totale : Déployable sur Windows, Linux (Ubuntu/Debian/Fedora) et macOS.
+
+🧱 Architecture Technique
+
+L'application repose sur une architecture modulaire en Python, facilitant l'ajout de nouvelles sources (scrapers/API) sans impacter le cœur du système.
+Stack Technique :
+
+    Langage : Python 3.12
+
+    GUI : PySide6 (Qt pour Python)
+
+    APIs/Scraping : Intégration multi-plateformes
+
+🛠️ Installation & Usage (DevOps/Admin)
+Bash
+
+# Cloner le projet
+git clone https://github.com/webmasterdu63-creator/-IT-Job-Finder-2026.git
+
+# Installer les dépendances
+pip install -r requirements.txt
+
+# Lancer l'application
+python main.py
