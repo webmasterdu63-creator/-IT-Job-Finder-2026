@@ -27,6 +27,8 @@ Aider les techniciens, admins systèmes et DevOps (junior → confirmé)
 
 ## 🧱 Architecture technique
 
+## 🧱 Architecture technique
+
 IT-Job-Finder-2026/
 ├── src/
 │   ├── ui/
