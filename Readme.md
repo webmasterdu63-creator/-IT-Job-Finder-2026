@@ -1,4 +1,5 @@
 🚀 Concept : IT Job Finder 2026
+
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![Qt](https://img.shields.io/badge/Qt-PySide6-41cd52?logo=qt)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
